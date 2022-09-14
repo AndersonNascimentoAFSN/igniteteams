@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { View } from 'react-native';
-import { Groups } from './src/screens/Groups';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { View } from "react-native";
+
+import { Groups } from "@screens/Groups";
 
 export function App() {
   return (
@@ -11,4 +12,3 @@ export function App() {
     </View>
   );
 }
-
