@@ -1,7 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components";
-import { ActivityIndicator } from "react-native";
 
 import {
   useFonts,
@@ -10,6 +9,8 @@ import {
 } from "@expo-google-fonts/roboto";
 
 import { Teams } from "@screens/Teams";
+import { Loading } from "@components/Loading";
+
 import theme from "@theme/index";
 
 export function App() {
@@ -18,14 +19,14 @@ export function App() {
     Roboto_700Bold,
   });
 
-  if (!fontsLoaded) {
-    return <ActivityIndicator />;
-  }
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
 
   return (
     <ThemeProvider theme={theme}>
       <StatusBar />
-      <Teams />
+      {fontsLoaded ? <Teams /> : <Loading />}
     </ThemeProvider>
   );
 }
